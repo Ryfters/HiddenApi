@@ -10,7 +10,7 @@ import dev.rikka.tools.refine.RefineAs;
 @RefineAs(IPackageManager.class)
 public interface IPackageManagerV37 {
 
-    @RequiresApi(Build.VERSION_CODES.CINNAMON_BUN)
+    @RequiresApi(37)
     PackageInfoList getInstalledPackages(long flags, int userId)
             throws RemoteException;
 }

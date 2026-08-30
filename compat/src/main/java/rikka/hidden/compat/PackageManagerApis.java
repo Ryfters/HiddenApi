@@ -83,7 +83,7 @@ public class PackageManagerApis {
 
     @Nullable
     public static ParceledListSlice<PackageInfo> getInstalledPackages(long flags, int userId) throws RemoteException {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.CINNAMON_BUN) {
+        if (Build.VERSION.SDK_INT >= 37) {
             return Refine.<IPackageManagerV37>unsafeCast(packageManager.get())
                     .getInstalledPackages(flags, userId);
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
