@@ -2,6 +2,7 @@ package rikka.hidden.compat;
 
 import android.app.ActivityManagerNative;
 import android.app.IActivityManager;
+import android.app.admin.IDevicePolicyManager;
 import android.content.pm.ILauncherApps;
 import android.content.pm.IPackageManager;
 import android.hardware.display.IDisplayManager;
@@ -28,6 +29,7 @@ class Services {
     protected static final SystemServiceBinder<IBatteryPropertiesRegistrar> batteryPropertiesRegistrar;
     protected static final SystemServiceBinder<ILauncherApps> launcherApps;
     protected static final SystemServiceBinder<IWindowManager> windowManager;
+    protected static final SystemServiceBinder<IDevicePolicyManager> devicePolicyManager;
 
     static {
         appOps = new SystemServiceBinder<>(
@@ -72,5 +74,8 @@ class Services {
 
         windowManager = new SystemServiceBinder<>(
                 "window", IWindowManager.Stub::asInterface);
+
+        devicePolicyManager = new SystemServiceBinder<>(
+                "device_policy", IDevicePolicyManager.Stub::asInterface);
     }
 }
