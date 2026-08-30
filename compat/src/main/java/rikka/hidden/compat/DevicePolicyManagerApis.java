@@ -11,7 +11,7 @@ public class DevicePolicyManagerApis {
 
         try {
             devicePolicyManager.get().setActiveAdmin(policyReceiver, refreshing, userHandle, provisioningContext);
-        } catch(Exception e) {
+        } catch(NoSuchMethodError e) {
             devicePolicyManager.get().setActiveAdmin(policyReceiver, refreshing, userHandle);
         }
     }
